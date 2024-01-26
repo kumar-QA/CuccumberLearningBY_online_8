@@ -1,0 +1,23 @@
+manual Testing
+
+collection of Testcase ----called scenario
+testcase-----step by step process follwed to test the feature
+
+
+Cucumber
+-------------
+collection of scaenario----Feature
+scenario====testcase
+
+
+Manual Testing
+login functionality(scenario)
+-------------------
+1.verify loginfunction with valid credentails-----Tc
+2.verify loginfunction with invalid credentails---TC
+3.verify loginfunction with valid username and invalid password
+4.verify loginfunction with invalid username and valid password
+5.Verify loginfunction with  empty input fileds
+
+
+
