@@ -1,5 +1,6 @@
 Feature: Verify complete loginfunction 
 
+@postiveTesting
 Scenario: verify loginfunction with valid credentails
   Given OpenBrowser and Enter Url
   When User Entered valid username
@@ -8,13 +9,14 @@ Scenario: verify loginfunction with valid credentails
   Then It should display Dashboardapage
   And close the browser
   
- #Scenario: verify loginfunction with invalid credentail
- #Given OpenBrowser and Enter Url
- #When User Entered invalid username
- #And User Entered invalid password
- #When User Click On Login Btn
- #Then It should display Error message
- #And close the browser
+  @NegativeTesting
+ Scenario: verify loginfunction with invalid credentail
+ Given OpenBrowser and Enter Url
+ When User Entered invalid username
+ And User Entered invalid password
+ When User Click On Login Btn
+ Then It should display Error message
+ And close the browser
 
 
   
