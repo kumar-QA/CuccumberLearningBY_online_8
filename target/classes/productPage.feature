@@ -1,5 +1,6 @@
 Feature: verifying complete products page functionality
 
+ @link
   Scenario: verify productpage link
   Given OpenBrowser and Enter Url
   When User Entered valid username

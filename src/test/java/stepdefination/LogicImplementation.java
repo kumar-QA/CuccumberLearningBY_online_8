@@ -18,21 +18,25 @@ public class LogicImplementation {
 	public void OpenBrowser_and_Enter_Url() {
 		driver=new ChromeDriver();
 		driver.get("https://admin-demo.nopcommerce.com/login");
+		System.out.println("Browser is started");
 	}
 	
 	@When("User Entered valid username")
 	public void UserEnteredvalidusername() {
 		driver.findElement(By.id("Email")).clear();
 		driver.findElement(By.id("Email")).sendKeys("admin@yourstore.com");
+		System.out.println("enterd username is done");
 	}
 	@And("User Entered valid password")
 	public void User_Entered_valid_Passsword() {
 		driver.findElement(By.id("Password")).clear();
 		driver.findElement(By.id("Password")).sendKeys("admin");
+		System.out.println("Entered password is done");
 	}
 	@When("User Click On Login Btn")
 	   public void User_Click_On_Login_Btn() {
 			driver.findElement(By.tagName("button")).click();
+			System.out.println("clicked on loginbtn");
 		}
 	   
 	   @Then("It should display Dashboardapage")
@@ -41,11 +45,13 @@ public class LogicImplementation {
 		  String ActualValue= driver.findElement(By.xpath("(//h1)[2]")).getText();
 		  String ExpectedValue="Dashboard";
 		  Assert.assertEquals(ExpectedValue, ActualValue);
+		  System.out.println("it is naviagted to dashboard page");
 	   }
 	
 	   @And("close the browser")
 	   public void close_the_browser() {
 		   driver.close();
+		   System.out.println("browser is closed");
 	   }
 	   
 	   
@@ -102,5 +108,17 @@ public class LogicImplementation {
 	 	   String ActualValue= driver.findElement(By.xpath("//tbody/tr[1]/td[3]")).getText();
 	 		System.out.println(ActualValue);
 	 }
-	   
+	   @When("^User Entered valid username as(.*)$")
+	   public void User_Entered_valid_username_as(String email) {
+		   driver.findElement(By.id("Email")).clear();
+			driver.findElement(By.id("Email")).sendKeys(email);
+	   }
+	   @And("^User Entered valid password as(.*)$")
+	   public void User_Entered_valid_password_as(String pwd) {
+		   driver.findElement(By.id("Password")).clear();
+			driver.findElement(By.id("Password")).sendKeys(pwd);
+	   }
+	 
+	 
+	 
 }
